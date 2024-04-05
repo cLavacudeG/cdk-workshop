@@ -4,6 +4,7 @@ import * as apigw from "aws-cdk-lib/aws-apigateway";
 import { HitCounter } from "./hitcounter";
 import { TableViewer } from "cdk-dynamo-table-viewer";
 import { Webpage } from "./webpage";
+import { Purchase } from "./purchase";
 
 export class CdkWorkshopStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
@@ -35,5 +36,8 @@ export class CdkWorkshopStack extends cdk.Stack {
     new Webpage(this, "Webpage-Cristian", {
       websiteIndexDocument: "index.html",
     });
+
+    // Purchase item - Exercise 2
+    new Purchase(this, "Purchase-Cristian");
   }
 }
